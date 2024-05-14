@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navigation Bar using position:</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+        /* Smooth scrolling IF user doesn't have a preference due to motion sensitivities */
+        @media screen and (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            background-color: #434d50;
+            box-sizing: border-box;
+            color: snow;
+            font: 300 1rem/1.65 "Roboto", sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            padding: 0;
+            overflow-y: scroll;
+        }
+
+        body *,
+        body *:before,
+        body *:after {
+            box-sizing: inherit;
+        }
+
+        header {
+            background-color: #00b6e3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background-color: snow;
+            box-shadow: 0 3px 10px rgba(204, 204, 204, 0.5);
+            position: sticky;
+            /* modern browsers */
+            top: 0;
+            transition: background-color 250ms linear;
+            width: 100%;
+            z-index: 999;
+        }
+
+        .is-fixed {
+            /* JS will apply this for IE11 / Edge 15 */
+            position: fixed;
+        }
+
+        nav ul {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            line-height: 50px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #00b6e3;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 0 25px;
+            display: block;
+            transition: all 150ms linear;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            /* 2020-02-26 */
+            background-color: #00b6e3;
+            color: snow;
+        }
+
+        .is-scrolled {
+            background-color: #00b6e3;
+            transition: background-color 250ms linear;
+        }
+
+        .is-scrolled a {
+            color: #fff;
+        }
+
+        .is-scrolled a:hover,
+        .is-scrolled a:focus,
+        .is-scrolled a:active,
+        .is-scrolled a.is-selected {
+            /* 2020-02-26 */
+            background-color: snow;
+            color: #00b6e3;
+        }
+
+        .main {
+            display: block;
+            /* IE 11 */
+            margin: 0 auto;
+            /* min-height: 1600px; */
+            max-width: 80ch;
+        }
+
+        .main p {
+            font-size: 1rem;
+            margin: 2em auto;
+        }
+
+        .main h3 {
+            letter-spacing: 0.1em;
+            scroll-margin: 20px 0 0 0;
+            text-transform: uppercase;
+        }
+
+        .main h3:first-child {
+            margin-top: 2em;
+        }
+
+        /* 2020-02-24
+  https://css-tricks.com/hash-tag-links-padding/ */
+        .main h3::before {
+            display: block;
+            content: " ";
+            margin-top: -100px;
+            height: 100px;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Sticky menu bar on scroll</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="main">
+        <h3 id="home">Home</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora vitae est
+            ratione doloribus hic tempore, odio consectetur debitis assumenda quo ipsa
+            dolores facere, ad. Accusantium expedita id autem impedit quidem tenetur
+            doloribus dolor odit consectetur. Iusto, itaque, alias! Eligendi doloribus
+            temporibus maxime quidem adipisci nisi dolorem ad consequatur natus placeat
+            repellendus modi, hic, deserunt earum perferendis eaque porro! Reiciendis,
+            ut cum alias facilis dolore corporis molestiae omnis rem qui eum quod
+            pariatur aliquam cupiditate voluptatem sed libero. Consectetur
+            exercitationem dicta, totam molestias, rem eum beatae praesentium nesciunt
+            quos voluptas optio soluta vero sapiente necessitatibus ipsa doloremque
+            aperiam laboriosam aspernatur ducimus.
+        </p>
+        <p>
+            Id officiis fugiat laboriosam accusantium, excepturi consequuntur accusamus,
+            amet quidem laborum omnis soluta corporis deserunt eveniet. Est, voluptate,
+            alias modi enim magnam sapiente numquam laboriosam illum tempora distinctio
+            aliquid maiores esse corrupti fuga voluptatem ea sint perspiciatis! Odio
+            voluptatum nam, necessitatibus cupiditate, beatae quibusdam consequuntur
+            placeat voluptas repudiandae laborum sunt tempore cum illo numquam vero.
+            Molestiae aliquid explicabo facilis sint voluptatum eveniet, nisi vitae
+            veritatis illo consequatur asperiores, nemo quibusdam nihil expedita debitis
+            ullam incidunt repellendus distinctio quo nesciunt maiores odit impedit! Ut
+            minus reiciendis id. Voluptatibus corrupti dolore hic voluptatum earum,
+            ipsam dolor recusandae incidunt voluptate nam animi eveniet!
+        </p>
+        <p>
+            Laborum tenetur, ut aperiam sapiente, quis minus voluptatibus rem vero
+            consequuntur sint expedita in quidem dolorum maxime distinctio nam
+            repellendus reprehenderit? Esse iusto cupiditate earum, et deleniti labore
+            id in itaque modi cumque ut? Esse vitae debitis provident maiores rem ad
+            aliquam quasi a, nulla maxime cupiditate, commodi sequi harum nobis alias
+            culpa illum natus fuga excepturi est aperiam minus unde ipsa? Nobis
+            distinctio natus fugit earum neque officiis, obcaecati consequuntur a
+            expedita perspiciatis sint animi eveniet praesentium dicta mollitia placeat
+            ab tempore, tempora. Natus voluptas nesciunt aliquam, incidunt ipsum! Error
+            quibusdam aliquam vitae voluptatem officiis magni dolorem iure dolore!
+        </p>
+        <h3 id="info">Info</h3>
+        <p>
+            Eveniet voluptatem nemo corporis rem facilis, dicta distinctio vitae
+            temporibus provident, numquam saepe commodi illo sed aperiam, quibusdam
+            exercitationem nam similique ad aspernatur aut tempora repudiandae!
+            Cupiditate veritatis, id numquam impedit nesciunt maiores fuga esse sed quam
+            corporis aspernatur. Enim aperiam tempore iusto. Vel numquam, in similique
+            eius nam harum voluptas eligendi, voluptatem tempore repellat doloremque,
+            pariatur rem. Harum accusamus fuga ipsum quaerat numquam! Magni nulla
+            sapiente non, voluptatibus ut odit nobis, quasi excepturi dolorem beatae a
+            accusantium itaque illum repellat at provident, quas rem explicabo.
+            Doloribus quae reiciendis modi quibusdam sunt error beatae consectetur,
+            eius, optio asperiores sequi vitae!
+        </p>
+        <p>
+            Itaque quasi expedita iure, ratione facilis, officiis impedit dolorum
+            doloremque accusamus fuga architecto delectus consectetur quisquam suscipit
+            sapiente, veritatis. Iure voluptatum quo, nostrum voluptatem, repellendus
+            nihil sit eos dolor omnis tempore vitae id aliquam quae provident nemo
+            maiores numquam! Vero animi incidunt numquam, aliquid doloribus corrupti
+            ducimus laudantium dignissimos suscipit ipsa a fuga nemo aut quisquam vel
+            quibusdam consequatur sed nisi quam, minus commodi quia alias fugit
+            deserunt? Omnis quae quas aliquam quo molestias ducimus facere et eos
+            suscipit voluptatum optio mollitia accusantium saepe ex totam explicabo,
+            distinctio libero architecto. Architecto cum voluptatem hic omnis nemo
+            provident debitis, magni laudantium?
+        </p>
+        <h3 id="blog">Blog</h3>
+        <p>
+            Repudiandae porro, nemo quis voluptatibus atque laudantium, ipsam aliquam
+            ipsa minima nostrum sint assumenda! Excepturi quibusdam, architecto ut illo
+            exercitationem illum hic perferendis quasi doloribus aperiam est delectus
+            officiis similique provident magnam at veniam explicabo. Beatae reiciendis
+            architecto vero delectus rerum est alias sint assumenda sequi iusto
+            consequatur eaque dolorem numquam possimus facilis esse excepturi neque
+            fugit amet eius saepe placeat, debitis quibusdam! Voluptatem doloremque
+            odio, possimus earum. Ullam repellendus vero tempore voluptatem veritatis,
+            eligendi quibusdam quo veniam, provident iure minus odit dolores suscipit
+            similique. Iste optio assumenda eligendi delectus, aliquam dolores eos.
+            Temporibus minima fuga odio minus hic. Necessitatibus.
+        </p>
+        <p>
+            Dignissimos id eos ea facere nulla nemo, iste molestias totam tempora. Sit,
+            maiores soluta dolores possimus recusandae, est rem nesciunt corporis
+            repellat temporibus sequi, quod atque beatae. Officia hic quos dolorem
+            perferendis debitis magnam dicta reprehenderit temporibus praesentium, quae
+            iste laborum id quasi unde sunt, rerum delectus nemo eum velit incidunt,
+            ipsam! Quidem illo alias sunt aut ab, facilis, explicabo magni, culpa magnam
+            eum dolor animi sint qui praesentium a deleniti dolore numquam obcaecati
+            minus repudiandae quisquam aperiam voluptates mollitia quasi vitae. Non
+            animi a debitis error officiis hic delectus, veniam sit illo veritatis
+            quisquam illum iure, molestiae laudantium odit.
+        </p>
+        <p>
+            Laudantium nam, quis iusto obcaecati quaerat voluptatibus! Rem nesciunt
+            accusamus, qui quam magnam cum iste nam quaerat unde voluptatum recusandae
+            atque quibusdam excepturi provident doloribus at! Expedita quo repellendus
+            id quidem pariatur quasi assumenda quis aliquam fuga iusto. Autem,
+            accusantium, repellendus. Sit at, inventore illum atque nesciunt
+            necessitatibus nostrum earum ut debitis molestiae, soluta tempore facere!
+            Delectus corporis vel consectetur sit tenetur minus quasi, alias dolor
+            cumque id earum nam at quam harum aut vero praesentium enim molestiae quos
+            suscipit, itaque aliquam nisi corrupti. Repellat, quo! Mollitia error
+            deleniti minima rerum, porro, repellat perferendis, aliquam id voluptatem
+            totam impedit eligendi.
+        </p>
+        <p>
+            Explicabo, molestias, suscipit. Ipsam libero tempora, porro eius ipsa
+            suscipit explicabo, perspiciatis sunt animi dolor magnam vero ea, illo
+            reprehenderit amet laboriosam labore debitis corporis dolores ut a rem.
+            Asperiores deleniti dolor voluptatem aliquid ipsam doloribus mollitia illum,
+            accusamus iste suscipit, quia ab numquam omnis. Quod nemo vitae, qui
+            perferendis inventore numquam odio. Incidunt ex placeat odio, esse ut culpa
+            nobis, modi voluptatum, eligendi, ullam cupiditate maxime numquam. Pariatur
+            illo nisi laborum consequuntur hic consectetur rerum? Fugiat laudantium at
+            et assumenda consequuntur qui quos, laborum cupiditate neque placeat, facere
+            delectus harum! Excepturi enim, distinctio, ipsam sunt architecto ea eveniet
+            aspernatur?
+        </p>
+        <h3 id="contact">Contact</h3>
+        <p>
+            Necessitatibus veniam praesentium, est qui laborum, officia inventore ipsum
+            facilis accusamus deserunt reprehenderit veritatis consequuntur nostrum
+            aliquam saepe dolorem voluptatem, sint molestiae numquam in eos magnam harum
+            itaque! Itaque quae obcaecati exercitationem culpa repellendus. Id
+            reiciendis accusantium deserunt corporis qui nisi molestiae repellendus
+            veniam dolorum ab tenetur delectus perspiciatis rerum, suscipit, placeat at
+            sapiente, incidunt aliquid quo voluptas fugiat. Iure sint dolorum molestiae
+            vero aliquam exercitationem! Omnis sunt asperiores alias dolor repellat,
+            atque, suscipit saepe possimus nesciunt unde officiis ducimus? Quibusdam,
+            quam, quas in illum rem atque, aut aliquam, odio officiis saepe vero impedit
+            quod repellat cum. Enim animi, ut.
+        </p>
+    </main>
+    <script>
+        function init() {
+            const nav = document.querySelector('nav');
+            const isSticky = window.getComputedStyle(nav).position == 'sticky';
+            const headerHeight = document.querySelector('header').offsetHeight;
+            let latestKnownScrollY = 0, ticking = false, isDone = false;
+
+            let update = function () {
+                const cls = nav.classList;
+                if (latestKnownScrollY >= headerHeight && !isDone) {
+                    if (!isSticky) cls.add("is-fixed"); // IE11 and Edge 15
+                    cls.add("is-scrolled");
+                    isDone = true;
+                } else if (latestKnownScrollY < headerHeight && isDone) {
+                    if (!isSticky) cls.remove("is-fixed");
+                    cls.remove("is-scrolled");
+                    isDone = false;
+                }
+                // allow further rAFs to be called
+                ticking = false;
+            };
+
+            /* See:
+          <https://www.html5rocks.com/en/tutorials/speed/animations/#debouncing-scroll-events> */
+            let onScroll = function () {
+                latestKnownScrollY = window.pageYOffset;
+                if (!ticking) {
+                    requestAnimationFrame(update);
+                    ticking = true;
+                }
+            };
+
+            window.addEventListener('scroll', onScroll, false);
+        }
+
+        document.addEventListener('DOMContentLoaded', init, false);
+
+        /* 2020-02-26 - Added Intersection Observer which works basically in all browsers except IE. See browser support at
+         https://caniuse.com/#feat=intersectionobserver
+        */
+        if ('IntersectionObserver' in window) {
+            const options = {
+                root: null,
+                rootMargin: "-50px 0px -400px",
+                threshold: 1
+            };
+
+            const links = document.querySelectorAll('nav a');
+
+            let intersectHandler = function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        links.forEach(function (a) {
+                            if (a.textContent == entry.target.textContent) {
+                                a.classList.add('is-selected');
+                            } else {
+                                a.classList.remove('is-selected');
+                            }
+                        });
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(intersectHandler, options);
+
+            const targets = document.querySelectorAll('main h3');
+            targets.forEach(function (target) {
+                observer.observe(target);
+            });
+        }
+    </script>
+</body>
+
+</html>

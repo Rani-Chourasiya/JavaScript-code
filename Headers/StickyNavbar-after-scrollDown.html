@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StickyNavbar-after-scrollDown</title>
+    <style>
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        nav {
+            z-index: 500;
+            width: 100%;
+            background-color: black;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+
+        .fixed .nav-inner-most {
+            width: 100%;
+            margin: 0 auto;
+            background-color: black;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            list-style: none;
+            float: left;
+        }
+
+        .right {
+            list-style: none;
+            float: right;
+        }
+
+        nav ul li a:link,
+        nav ul li a:visited {
+            display: block;
+            text-decoration: none;
+            padding: 10px 40px;
+            background-color: black;
+            color: orange;
+            font-size: 90%;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            background-color: orange;
+            color: black;
+        }
+
+        nav ul li:last-child a:link,
+        nav ul li:last-child a:visited {
+            border-right: none;
+        }
+
+        .list:before,
+        .list:after {
+            content: "";
+            display: table;
+        }
+
+        .list:after {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <img src="https://1.bp.blogspot.com/-EM3NHyBJIzc/UQpFM9v9akI/AAAAAAAAAs4/tW7uv-G1wRA/s1600/gold-coast-australia-Australia-lake-Sunrise-Morning-315x851.jpg"
+            width="100%" height="50%" />
+
+        <nav>
+            <ul class="list">
+                <li><a href="">Menu 1</a></li>
+                <li><a href="">Menu 2</a></li>
+                <li><a href="">Menu 3</a></li>
+                <li><a href="">Menu 4</a></li>
+                <li><a href="">Menu 5</a></li>
+                <li class="right"><a href="">Sign Out</a></li>
+                <li class="right"><a href="">Sign In</a></li>
+
+            </ul>
+        </nav>
+
+        <h2>Content Header</h2>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+       <p class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet consectetur odit non explicabo beatae pariatur earum voluptatibus hic, ducimus accusamus mollitia animi dolore fuga. Rerum, molestiae atque? Dignissimos, quasi tempora.
+       Obcaecati architecto natus sequi. Praesentium, nisi distinctio soluta, ut alias consequuntur magnam molestias similique ab reprehenderit excepturi sequi quidem ex perspiciatis necessitatibus fugiat architecto tempore quisquam voluptatem pariatur temporibus commodi!
+       Facilis recusandae inventore quas accusantium, deleniti animi error laborum eius labore est, nihil harum. Rerum illo eius rem animi, delectus aperiam ducimus saepe, velit maxime aliquam a obcaecati porro eaque!
+       Assumenda ullam incidunt quisquam ratione expedita veritatis inventore ipsam alias soluta, eaque aspernatur, iusto doloribus quibusdam libero. Error eum suscipit nisi facere accusamus nemo? Officiis ut assumenda ab? Consequatur, libero.
+       Consectetur recusandae animi velit quia nemo minus tenetur facere amet non, a architecto commodi, praesentium necessitatibus, labore debitis magni? Totam architecto necessitatibus sunt minima corrupti debitis nihil, ipsa repellat quasi!
+       Iusto minus libero at doloribus aspernatur, voluptas delectus ea non illo quae numquam dolorum, id maxime facilis sequi quasi excepturi, labore ducimus temporibus ipsa vel aliquam totam incidunt ipsum! Vitae!
+       Ratione modi veniam temporibus, architecto non reiciendis, ipsa consectetur fugit dolorem nisi vero, repellat nesciunt aperiam! Ullam voluptatem inventore assumenda architecto obcaecati, libero iste, cumque necessitatibus, harum ipsum nemo magni.
+       Aliquid, voluptate nemo neque beatae impedit fuga aspernatur molestias ad pariatur molestiae recusandae amet adipisci accusantium quis aliquam quidem itaque velit. Dolores cupiditate asperiores ratione voluptatem placeat accusamus consequuntur. Impedit.
+       Rem molestiae minus saepe enim. Quasi architecto cum debitis aliquid voluptates rem maiores repellendus cupiditate. Totam aperiam consequuntur veritatis expedita eum perspiciatis nulla deleniti? Vitae facere aliquam iusto id officiis!
+       Sunt illo iure veritatis autem, assumenda recusandae praesentium dolor laboriosam velit ducimus ea nisi aliquam consequuntur excepturi quisquam cum laborum impedit. Quas et ipsa explicabo ipsam odit officia qui tempore.
+       Ipsam, optio iure illum exercitationem, pariatur id tempore ipsum veritatis quod ea delectus atque fugiat quas qui. Tempora iure ratione facilis! Odit nulla quam laborum veritatis ipsum assumenda. Eveniet, cumque.
+       Distinctio, officiis odio? Animi necessitatibus, nesciunt esse modi non consequuntur officia similique aliquam, reprehenderit cumque rem perferendis sed quam. Qui ipsa libero id aspernatur pariatur! Iste maxime saepe tempore esse!
+       Aut vero quo et totam nam! Quisquam officiis nulla doloremque numquam incidunt! Quasi labore alias cum modi recusandae dolores error optio eligendi ab ex praesentium, nemo repellat, distinctio quaerat fuga.
+       Iste magni aliquam debitis quia ex voluptas. Quasi tempore eos dolore modi ut quo deserunt, delectus blanditiis enim earum minima reiciendis ullam quam suscipit exercitationem sed reprehenderit facilis fugiat nostrum.
+       Obcaecati deserunt molestias laborum possimus quaerat dolore voluptatibus quos perferendis amet necessitatibus voluptas, beatae nam, ab quam inventore corporis minima enim at ratione. Modi voluptas repudiandae perspiciatis atque inventore? Aspernatur.
+       Consectetur nostrum cumque magnam officia in inventore tempore maxime hic facere necessitatibus. Ex aspernatur beatae rem ducimus aliquid accusantium explicabo sed dolores eaque labore nostrum aliquam, alias recusandae consequatur numquam!
+       Nihil ea, assumenda vitae at sint fugiat ad quidem, omnis, quisquam accusantium recusandae suscipit possimus nulla! Minus temporibus, perferendis nostrum est modi, ut earum error ipsa quod sit assumenda architecto!
+       Optio, consectetur! Et ipsum veniam sed cumque aut magni, modi at qui aperiam eaque ullam ut labore hic illum perferendis! Sequi ut impedit tenetur assumenda magnam? Maxime quis minima deleniti.
+       Quisquam ad, repellendus perferendis, nesciunt nobis velit exercitationem natus earum, dolor temporibus dolorem inventore repudiandae tempora voluptates officiis harum voluptatem quaerat? Deserunt, aperiam enim? Magni fugiat quod esse eum sint.
+       Fugiat consequatur est necessitatibus architecto ea officiis nemo voluptates, unde dignissimos quisquam, magnam cumque amet fuga. Ratione modi eligendi, error enim molestias rem similique non laborum ex ad eos sunt?
+       Eligendi quo vel minima neque eaque, quia, libero ad voluptates dolores odio sapiente perferendis assumenda ratione. Quidem iste maxime doloribus sequi a vero. Numquam nemo a temporibus consequatur necessitatibus accusamus!
+       Dolorem earum distinctio, ullam facilis aliquid harum cum culpa vitae consequatur sit! Minima consequuntur, a minus dicta fuga laborum, ipsum voluptatibus sapiente officia porro nemo, error accusantium voluptatem eum odit.
+       Reiciendis sint harum, eaque error cum voluptatem unde sunt ullam aperiam, voluptate, natus sequi accusantium vel libero. Corporis iure, ex natus sapiente modi ipsa incidunt, neque excepturi autem eum aliquam.
+       Facilis dolore cumque laboriosam laborum, ab minima odio exercitationem cupiditate perferendis in dolor vitae at facere amet assumenda beatae. Iure saepe ut at autem ipsa, pariatur optio et expedita odit.
+       Voluptatem incidunt perspiciatis animi doloremque. Fuga possimus perferendis rem, earum eos quos placeat consequatur officiis fugit fugiat ad unde rerum officia asperiores quae vero temporibus, porro error? Aspernatur, aut voluptate?
+       Quod iste distinctio nostrum, beatae sunt voluptates aspernatur natus ex necessitatibus in quis optio! Eaque, soluta! Perspiciatis odio voluptates non dolor assumenda iste, quidem nobis velit animi maiores necessitatibus repellendus.
+       Ipsam facilis eligendi accusantium ullam. Facere illo obcaecati ea assumenda fuga quasi vitae tempore vero provident eligendi? Ad, suscipit iusto accusamus distinctio atque commodi non minima tempore accusantium molestias enim!
+       Maxime, distinctio sapiente! Explicabo alias earum amet porro doloribus at, laborum fugit dicta maiores expedita nemo eaque quidem. Neque provident modi consequuntur tempore voluptas repellendus, error dolorum. Unde, similique sint.
+       Reiciendis excepturi est delectus nostrum. Possimus magni dicta eos sapiente earum praesentium cumque eius officiis. Dolore cupiditate quos suscipit voluptas asperiores eius pariatur eligendi. Blanditiis delectus quasi dignissimos est iste?
+       Adipisci enim facilis nobis, animi vitae repellat. Cupiditate repudiandae, quo delectus sit ab modi, ipsa rerum tempore ullam enim consequuntur aperiam molestias omnis. Aspernatur facere asperiores eveniet laborum et impedit!</p>
+    </div>
+    <script src="https://byjaris.com/code/libs/jquery.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            var navset, scrollPos = 0;
+
+            jQuery("nav").wrap('<div class="nav-placeholder"></div>');
+            jQuery("nav").wrapInner('<div class="nav-inner"></div>');
+            jQuery(".nav-inner").wrapInner('<div class="nav-inner-most"></div>');
+
+            function stickyUtility() {
+                if (!jQuery("nav").hasClass("fixed")) {
+                    navset = jQuery("nav").offset().top;
+                }
+            }
+
+            stickyUtility();
+
+            jQuery(window).resize(function () {
+                stickyUtility();
+            });
+
+            jQuery(window).scroll(function () {
+                scrollPos = jQuery(window).scrollTop();
+
+                if (scrollPos >= navset) {
+                    jQuery("nav").addClass("fixed");
+                }
+                else {
+                    jQuery("nav").removeClass("fixed");
+                }
+
+            });
+        });
+    </script>
+</body>
+
+</html>

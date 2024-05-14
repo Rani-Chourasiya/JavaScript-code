@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STICKY BUTTONS REVEALED ON SCROLL</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0 auto;
+            padding: 36px;
+            box-sizing: border-box;
+        }
+
+        .h1 {
+            font-family: sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: dodgerblue;
+            text-align: center;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+
+        .h2 {
+            font-family: sans-serif;
+            font-size: 27px;
+            font-weight: 100;
+            color: #666;
+            text-align: center;
+            margin: 9px;
+            padding-bottom: 21px;
+            line-height: 1.2;
+        }
+
+        .h2 span {
+            font-family: monospace;
+            color: red;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .content p {
+            font-family: sans-serif;
+            font-size: 21px;
+            font-weight: 300;
+            color: #666;
+            text-align: left;
+            text-transform: none;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /*
+*************************************************
+
+---   SECTION   --->   TOP
+   
+*************************************************
+*/
+
+        .btn2top .sticky-btn {
+            position: fixed;
+            bottom: -96px;
+            right: 60px;
+            background: dodgerblue;
+            opacity: .6;
+            border-radius: 50%;
+            transition: all 0.9s ease;
+        }
+
+        .btn2top .sticky-btn img {
+            width: 36px;
+            height: 36px;
+        }
+
+        .btn2top .sticky-btn.revealed {
+            bottom: 36px;
+            opacity: 1;
+        }
+
+        .btn2top a.sticky-btn {
+            font-family: sans-serif;
+            padding: 9px;
+            display: block;
+            transition: all 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .btn2top a.sticky-btn:hover {
+            color: yellow;
+        }
+
+        @media screen and (max-width: 768px) {
+            .btn2top .sticky-btn {
+                right: 21px;
+            }
+
+            .btn2top .sticky-btn.revealed {
+                bottom: 21px;
+            }
+        }
+
+        /*
+*************************************************
+---   SECTION   --->   WHATSAPP-STICKY  
+*************************************************
+*/
+
+
+        .btn2contact .sticky-btn {
+            position: fixed;
+            bottom: -96px;
+            left: 33px;
+            background: rgba(255, 255, 255, 0.81);
+            padding: 12px;
+            border-radius: 50%;
+            transition: all 0.8s ease;
+        }
+
+        .btn2contact .sticky-btn:hover {
+            background: rgba(255, 255, 255, 0.81);
+            transform: translateY(-3px);
+        }
+
+        .btn2contact .sticky-btn img {
+            width: 45px;
+        }
+
+        .btn2contact .sticky-btn.revealed {
+            bottom: 36px;
+            opacity: 1;
+        }
+
+        @media screen and (max-width: 768px) {
+            .btn2contact .sticky-btn {
+                left: 21px;
+            }
+
+            .btn2contact .sticky-btn img {
+                width: 36px;
+            }
+
+            .btn2contact .sticky-btn.revealed {
+                bottom: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page-top"></div>
+
+    <h1 class="h1">Multiple Sticky Buttons Revealed On Scroll</h1>
+    <h2 class="h2">Just 12 Javascript Lines 😲 <br>
+        Only 1 Class For All Your Buttons</h2>
+    <h2 class="h2">Use the class <span>.sticky-btn</span> and customize it for every <span>ID</span> purpose.</h2>
+
+    <div class="btn2top">
+        <a href="#page-top" class="sticky-btn">
+            <img src="https://byjaris.com/code/icons/chevron-up.svg"></a>
+    </div>
+
+
+    <div class="btn2contact">
+        <a href="https://spirumax.com.br" target="blank" class="sticky-btn">
+            <img src="https://byjaris.com/code/icons/whatsapp-icon.svg">
+        </a>
+    </div>
+
+    <div class="content">
+        <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, soluta ut, nam culpa eaque officiis
+            possimus beatae mollitia enim exercitationem aut sed, perferendis aspernatur. Error debitis praesentium
+            voluptatum voluptatem assumenda?
+            Ipsa iusto reprehenderit molestias qui numquam non incidunt quo repudiandae laboriosam voluptatum magnam
+            quasi omnis asperiores, doloremque veniam explicabo quisquam rerum pariatur. Quidem culpa ullam incidunt
+            dolores molestiae deleniti. Ab.
+            Asperiores quo neque ab voluptates perspiciatis ipsum in nesciunt consequatur hic nam temporibus totam fuga
+            ipsa dolore, veniam repudiandae suscipit, soluta provident. Quas magnam odit dicta harum fugiat doloremque
+            distinctio!
+            Asperiores dolor perspiciatis sapiente non aut commodi quae cumque, delectus repudiandae esse incidunt
+            excepturi, temporibus amet voluptatibus! Assumenda saepe odit tempora totam deleniti doloremque aliquam
+            blanditiis itaque voluptatum! Minus, nisi!
+            Sapiente officiis ipsa quibusdam officia sed cum non voluptatum. Beatae, est. Necessitatibus aut placeat,
+            enim dolorum, odit blanditiis temporibus ea atque provident hic ullam quas ex quibusdam totam ut cum!
+        </p>
+        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum necessitatibus optio quaerat, qui
+            ipsam reiciendis accusantium fugiat! Tempora, expedita similique deserunt repellat molestias mollitia
+            asperiores. Amet eos delectus tempora esse!
+            Quo laudantium ut, non omnis deserunt repellendus aperiam id delectus, et temporibus quam, nam laboriosam
+            perspiciatis corrupti quod ipsa inventore? Nihil enim numquam totam molestias eaque eveniet sunt praesentium
+            obcaecati.
+            Aliquam quos porro autem alias eligendi recusandae omnis eveniet sint atque temporibus corporis molestias ad
+            velit excepturi dolorem quam soluta totam voluptatum repellendus necessitatibus, delectus similique dolorum.
+            Beatae, aperiam incidunt.
+            Hic in perspiciatis dolore vel aliquam adipisci, velit quaerat nam nisi! Facilis natus, explicabo
+            voluptatibus vel in autem necessitatibus possimus blanditiis dolore illum error pariatur unde reprehenderit
+            porro qui et?
+            Porro modi totam dolores consequatur, voluptatum eum quibusdam harum. Neque mollitia at ex. Voluptas
+            provident veritatis possimus corporis est! Ea delectus suscipit sunt laboriosam assumenda fugiat iure vitae
+            blanditiis id!</p>
+    </div>
+
+    <script src="https://byjaris.com/code/libs/jquery.min.js"></script>
+    <script>
+        var scroll_offset = 120;
+        $(window).scroll(function () {
+            var $this = $(window);
+            if ($('.sticky-btn').length) {
+                if ($this.scrollTop() > scroll_offset) {
+                    $('.sticky-btn').addClass('revealed');
+                } else {
+                    $('.sticky-btn').removeClass('revealed');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
