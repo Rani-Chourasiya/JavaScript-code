@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+</head>
+
+<body>
+    <div class="pt-5 py-5 bg-secondary">
+        <div class="form-layout">
+            <form action="#" class="form-total">
+                <div class="container">
+                    <div class="row g-0">
+                        <div class="col-sm-4 col-md-4 col-lg-4 bg-primary">
+                            <div class="fw-bold">
+                                <nav class="navbar navbar-light">
+                                    <div class="">
+                                        <ul class="nav nav-pills lh-lg" id="pills-tab" role="tablist">
+                                            <li class="nav-item active register-form-title">
+                                                <p class="step-icon d-inline-block mx-4"><span>01</span></p>
+                                                <a class="d-inline-block nav-link active text-white" id="pills-home-tab" href="#pills-home" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Register</a>
+                                            </li>
+                                            <li class="nav-item register-form-title">
+                                                <p class="step-icon d-inline-block mx-4"><span>02</span></p>
+                                                <a class="d-inline-block nav-link text-white" id="pills-password-tab" href="#pills-password" data-bs-toggle="pill" data-bs-target="#pills-password" role="tab" aria-controls="pills-password" aria-selected="false">Change your password </a>
+                                            </li>
+                                            <li class="nav-item register-form-title">
+                                                <p class="step-icon d-inline-block mx-4"><span>03</span></p>
+                                                <a class="d-inline-block nav-link text-white" id="pills-edit-tab" href="#pills-edit" data-bs-toggle="pill" data-bs-target="#pills-edit" role="tab" aria-controls="pills-edit" aria-selected="false">Edit your information</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="register-form-fiilpage tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <div class="bg-white">
+                                        <div class="p-4">
+                                            <h4 class="text-center">Peronal Infomation</h4>
+                                            <p class="text-center mx-4 px-5">Please enter your infomation and proceed to the next step so we can build your accounts.</p>
+
+                                            <form action="inner">
+                                                <div class="container">
+                                                    <div class="row mx-3">
+                                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                                            <label for="inputEmail4" class="form-label">First Name</label>
+                                                            <input type="email" class="form-control" id="inputEmail4">
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                                            <label for="inputPassword4" class="form-label">Last Name</label>
+                                                            <input type="password" class="form-control" id="inputPassword4">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mx-4">
+                                                        <div class="email-field">
+                                                            <label for="inputAddress" class="form-label">Email</label>
+                                                            <input type="text" class="form-control" id="inputAddress" placeholder="Enter your email">
+                                                        </div>
+                                                        <div class="phone-field">
+                                                            <label for="inputAddress2" class="form-label">Phone Number</label>
+                                                            <input type="text" class="form-control" id="inputAddress2" placeholder="Enter your phone Number">
+                                                        </div>
+
+                                                        <div class="dob-field bate-birth-part">
+                                                            <label for="inputState" class="form-label">Birth Date:</label>
+                                                            <ul class="nav gap-4">
+                                                                <li class="nav-item">
+                                                                    <select name="month" id="inputState" class="form-select">
+                                                                                <option value="MM" disabled selected>MM</option>
+                                                                                <option value="16">16</option>
+                                                                                <option value="17">17</option>
+                                                                                <option value="18">18</option>
+                                                                                <option value="19">19</option>
+                                                                            </select>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <select name="date" id="inputState" class="form-select">
+                                                                                <option value="DD" disabled selected>DD</option>
+                                                                                <option value="Feb">Feb</option>
+                                                                                <option value="Mar">Mar</option>
+                                                                                <option value="Apr">Apr</option>
+                                                                                <option value="May">May</option>
+                                                                            </select>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <select name="year" id="inputState" class="form-select">
+                                                                                <option value="YYYY" disabled selected>YYYY</option>
+                                                                                <option value="2017">2017</option>
+                                                                                <option value="2016">2016</option>
+                                                                                <option value="2015">2015</option>
+                                                                                <option value="2014">2014</option>
+                                                                                <option value="2013">2013</option>
+                                                                            </select>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="btn-toolbar justify-content-between p-3 mx-3" role="toolbar" aria-label="Toolbar with button groups">
+                                                        <div class="btn-group" role="group" aria-label="First group">
+                                                            <a href="#" class="btn btn-bg-color">Back</a>
+                                                        </div>
+                                                        <div class="btn-group" role="group" aria-label="First group">
+                                                            <a href="#" class="btn btn-bg-color">Submit</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="register-form-fiilpage tab-pane fade" id="pills-password" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                    <div class="bg-white">
+                                        <div class="p-4">
+                                            <h4 class="text-center">Change your password</h4>
+                                            <p class="text-center mx-4 px-5">Please enter your infomation and proceed to the next step so we can build your accounts.</p>
+
+                                            <div class="password-section">
+                                                <div class="container">
+                                                    <form action="#">
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlTextarea1" class="form-label">password</label>
+                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="password">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleFormControlTextarea1" class="form-label">confirm password</label>
+                                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="password">
+                                                        </div>
+                                                        <div class="btn-toolbar justify-content-between p-3 mx-3" role="toolbar" aria-label="Toolbar with button groups">
+                                                            <div class="btn-group" role="group" aria-label="First group">
+                                                                <button type="button" class="btn btn-bg-color">Back</button>
+                                                            </div>
+                                                            <div class="btn-group" role="group" aria-label="First group">
+                                                                <button type="button" class="btn btn-bg-color">submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="register-form-fiilpage tab-pane fade" id="pills-edit" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    <div class="bg-white">
+                                        <div class="p-4">
+                                            <h4 class="text-center">Peronal Infomation</h4>
+                                            <p class="text-center mx-4 px-5">Please enter your infomation and proceed to the next step so we can build your accounts.</p>
+
+                                            <form action="inner">
+                                                <div class="container">
+                                                    <div class="row mx-3">
+                                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                                            <label for="inputEmail4" class="form-label">First Name</label>
+                                                            <input type="email" class="form-control" id="inputEmail4">
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                                            <label for="inputPassword4" class="form-label">Last Name</label>
+                                                            <input type="password" class="form-control" id="inputPassword4">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mx-4">
+                                                        <div class="email-field">
+                                                            <label for="inputAddress" class="form-label">Email</label>
+                                                            <input type="text" class="form-control" id="inputAddress" placeholder="Enter your email">
+                                                        </div>
+                                                        <div class="phone-field">
+                                                            <label for="inputAddress2" class="form-label">Phone Number</label>
+                                                            <input type="text" class="form-control" id="inputAddress2" placeholder="Enter your phone Number">
+                                                        </div>
+
+                                                        <div class="dob-field bate-birth-part">
+                                                            <label for="inputState" class="form-label">Birth Date:</label>
+                                                            <ul class="nav gap-4">
+                                                                <li class="nav-item">
+                                                                    <select name="month" id="inputState" class="form-select">
+                                                                                <option value="MM" disabled selected>MM</option>
+                                                                                <option value="16">16</option>
+                                                                                <option value="17">17</option>
+                                                                                <option value="18">18</option>
+                                                                                <option value="19">19</option>
+                                                                            </select>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <select name="date" id="inputState" class="form-select">
+                                                                                <option value="DD" disabled selected>DD</option>
+                                                                                <option value="Feb">Feb</option>
+                                                                                <option value="Mar">Mar</option>
+                                                                                <option value="Apr">Apr</option>
+                                                                                <option value="May">May</option>
+                                                                            </select>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <select name="year" id="inputState" class="form-select">
+                                                                                <option value="YYYY" disabled selected>YYYY</option>
+                                                                                <option value="2017">2017</option>
+                                                                                <option value="2016">2016</option>
+                                                                                <option value="2015">2015</option>
+                                                                                <option value="2014">2014</option>
+                                                                                <option value="2013">2013</option>
+                                                                            </select>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="btn-toolbar justify-content-between p-3 mx-3" role="toolbar" aria-label="Toolbar with button groups">
+                                                        <div class="btn-group" role="group" aria-label="First group">
+                                                            <a href="#" class="btn btn-bg-color">Back</a>
+                                                        </div>
+                                                        <div class="btn-group" role="group" aria-label="First group">
+                                                            <a href="#" class="btn btn-bg-color">Submit</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Checkout Start -->
+    <!-- <section class="section-tb-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="checkout-area">
+                        <div class="billing-area">
+                            <form>
+                                <h2>Billing details</h2>
+                                <div class="billing-form">
+                                    <ul class="billing-ul input-2">
+                                        <li class="billing-li">
+                                            <label>First name</label>
+                                            <input type="text" name="f-name" placeholder="First name">
+                                        </li>
+                                        <li class="billing-li">
+                                            <label>Last name</label>
+                                            <input type="text" name="l-name" placeholder="Last name">
+                                        </li>
+                                    </ul>
+                                    <ul class="billing-ul">
+                                        <li class="billing-li">
+                                            <label>Company name (Optional)</label>
+                                            <input type="text" name="company details" placeholder="Company name">
+                                        </li>
+                                    </ul>
+                                    <ul class="billing-ul">
+                                        <li class="billing-li">
+                                            <label>Country</label>
+                                            <select>
+                                                <option>Select a country</option>
+                                                <option>United country</option>
+                                                <option>Russia</option>
+                                                <option>italy</option>
+                                                <option>France</option>
+                                                <option>Ukraine</option>
+                                                <option>Germany</option>
+                                                <option>Australia</option>
+                                            </select>
+                                        </li>
+                                    </ul>
+                                    <ul class="billing-ul">
+                                        <li class="billing-li">
+                                            <label>Street address</label>
+                                            <input type="text" name="address" placeholder="Street address">
+                                        </li>
+                                    </ul>
+                                    <ul class="billing-ul">
+                                        <li class="billing-li">
+                                            <label>Apartment,suite,unit etc. (Optional)</label>
+                                            <input type="text" name="--" placeholder="">
+                                        </li>
+                                    </ul>
+                                    <ul class="billing-ul">
+                                        <li class="billing-li">
+                                            <label>Town / City</label>
+                                            <input type="text" name="city" placeholder="">
+                                        </li>
+                                    </ul>
+                                    <ul class="billing-ul">
+                                        <li class="billing-li">
+                                            <label>State / Country</label>
+                                            <input type="text" name="--" placeholder="">
+                                        </li>
+                                    </ul>
+                                    <ul class="billing-ul">
+                                        <li class="billing-li">
+                                            <label>Postcode / ZIP</label>
+                                            <input type="text" name="--" placeholder="">
+                                        </li>
+                                    </ul>
+                                    <ul class="billing-ul input-2">
+                                        <li class="billing-li">
+                                            <label>Email address</label>
+                                            <input type="text" name="mail" placeholder="Email address">
+                                        </li>
+                                        <li class="billing-li">
+                                            <label>Phone</label>
+                                            <input type="text" name="phone" placeholder="Phone">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                            <div class="billing-details">
+                                <form>
+                                    <h2>Shipping details</h2>
+                                    <ul class="shipping-form">
+                                        <li class="check-box">
+                                            <input type="checkbox" name="--">
+                                            <label>Ship to a different address?</label>
+                                        </li>
+                                        <li class="comment-area">
+                                            <label>Order notes(Optional)</label>
+                                            <textarea name="comments" rows="4" cols="80"></textarea>
+                                        </li>
+                                    </ul>
+
+                                </form>
+                            </div>
+                        </div>
+                        <div class="order-area">
+                            <div class="check-pro">
+                                <h2>In your cart (2)</h2>
+                                <ul class="check-ul">
+                                    <li>
+                                        <div class="check-pro-img">
+                                            <a href="product.html"><img src="image/pro-page-image/check-image-1.jpg" class="img-fluid" alt="image"></a>
+                                        </div>
+                                        <div class="check-content">
+                                            <a href="product.html">Fresh healthy food</a>
+                                            <span class="check-code-blod">Product code: <span>CA70051541B</span></span>
+                                            <span class="check-price">$93.00</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="check-pro-img">
+                                            <a href="product.html"><img src="image/pro-page-image/check-image-2.jpg" class="img-fluid" alt="image"></a>
+                                        </div>
+                                        <div class="check-content">
+                                            <a href="product.html">Fresh healthy food</a>
+                                            <span class="check-code-blod">Product code: <span>CA70051541B</span></span>
+                                            <span class="check-price">$230.00</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h2>Your order</h2>
+                            <ul class="order-history">
+                                <li class="order-details">
+                                    <span>Product:</span>
+                                    <span>Total</span>
+                                </li>
+                                <li class="order-details">
+                                    <span>Orange juice:</span>
+                                    <span>$93.00</span>
+                                </li>
+                                <li class="order-details">
+                                    <span>Shrimp jumbo:</span>
+                                    <span>$230.00</span>
+                                </li>
+                                <li class="order-details">
+                                    <span>Subtotal:</span>
+                                    <span>$323.00</span>
+                                </li>
+                                <li class="order-details">
+                                    <span>Shipping Charge:</span>
+                                    <span>Free shipping</span>
+                                </li>
+                                <li class="order-details">
+                                    <span>Total:</span>
+                                    <span>$323.00</span>
+                                </li>
+                            </ul>
+                            <form>
+                                <ul class="order-form">
+                                    <li>
+                                        <input type="checkbox" name="--">
+                                        <label>Direct bank transfer</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="--">
+                                        <label>Cheque payment</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="--">
+                                        <label>Paypal</label>
+                                    </li>
+                                    <li class="pay-icon">
+                                        <a href="javascript:void(0)"><i class="fa fa-credit-card"></i></a>
+                                        <a href="javascript:void(0)"><i class="fa fa-cc-visa"></i></a>
+                                        <a href="javascript:void(0)"><i class="fa fa-cc-paypal"></i></a>
+                                        <a href="javascript:void(0)"><i class="fa fa-cc-mastercard"></i></a>
+                                    </li>
+                                </ul>
+                            </form>
+                            <div class="checkout-btn">
+                                <a href="javascript:void(0)" class="btn-style1">Place order</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Chechout End -->
+</body>
+
+</html>

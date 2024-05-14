@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Slider</title>
+    <style>
+        /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ rangeSlider-1 css start @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+.range-slider {
+    position: relative;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+}
+
+.range-slider input {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 15px;
+    width: 200px;
+    outline: none;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.output {
+    position: absolute;
+    border: 1px solid #999;
+    width: 40px;
+    height: 30px;
+    color: #999;
+    border-radius: 4px;
+    display: inline-block;
+    font: bold 15px/30px Helvetica, Arial;
+    bottom: 70%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #555;
+    margin-top: -5px;
+    position: relative;
+    z-index: 10000;
+}
+
+.full-range,
+.incl-range {
+    width: 100%;
+    height: 5px;
+    left: 0;
+    top: 21px;
+    position: absolute;
+    background: #DDD;
+}
+
+.incl-range {
+    background: gold;
+}
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ rangeSlider-1 css end @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+    </style>
+</head>
+<body>
+    <section class="mt-2">
+        <div class="container">
+            <div class="top-heading">
+                <h3 class="w-bold">Range Silder Section</h3>
+            </div>
+            <div class="mt-5">
+                <form action="#" class="range-slider">
+                    <span class="output outputOne"></span>
+                    <span class="output outputTwo"></span>
+                    <span class="full-range"></span>
+                    <span class="incl-range"></span>
+                    <input name="min_price" value="10" min="0" max="100" step="1" type="range">
+                    <input name="max_price" value="90" min="0" max="100" step="1" type="range">
+                </form>
+                <button type="submit" class="button">Filter</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        var min_price = document.querySelector('input[name="min_price"]'),
+    max_price = document.querySelector('input[name="max_price"]'),
+    outputOne = document.querySelector('.outputOne'),
+    outputTwo = document.querySelector('.outputTwo'),
+    inclRange = document.querySelector('.incl-range'),
+    updateView = function() {
+        if (this.getAttribute('name') === 'min_price') {
+            outputOne.innerHTML = this.value;
+            outputOne.style.left = this.value / this.getAttribute('max') * 100 + '%';
+        } else {
+            outputTwo.style.left = this.value / this.getAttribute('max') * 100 + '%';
+            outputTwo.innerHTML = this.value
+        }
+        if (parseInt(min_price.value) > parseInt(max_price.value)) {
+            inclRange.style.width = (min_price.value - max_price.value) / this.getAttribute('max') * 100 + '%';
+            inclRange.style.left = max_price.value / this.getAttribute('max') * 100 + '%';
+        } else {
+            inclRange.style.width = (max_price.value - min_price.value) / this.getAttribute('max') * 100 + '%';
+            inclRange.style.left = min_price.value / this.getAttribute('max') * 100 + '%';
+        }
+    };
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateView.call(min_price);
+    updateView.call(max_price);
+    $('input[type="range"]').on('mouseup', function() {
+        this.blur();
+    }).on('mousedown input', function() {
+        updateView.call(this);
+    });
+});
+    </script>
+</body>
+</html>
