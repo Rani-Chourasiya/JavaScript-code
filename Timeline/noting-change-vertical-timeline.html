@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noting change vertical timeline</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            letter-spacing: 2px;
+            padding: 2rem;
+        }
+
+        .Americas {
+            position: relative;
+            padding: 3.125em 5%;
+            margin: 2%;
+            overflow: hidden;
+        }
+
+        .acts {
+            padding-top: 2.5em;
+            margin: auto;
+            max-width: 100%;
+        }
+
+        .shameful {
+            position: absolute;
+            width: 0.25em;
+            top: 1.563em;
+            bottom: 1.563em;
+            left: 50%;
+            margin-left: -0.125em;
+            background: #EBEFC9;
+            transition: 0.65s cubic-bezier(0.58, -0.57, 0.17, 1.21);
+        }
+
+        .shameful:before {
+            content: " ";
+            width: 3.125em;
+            height: 3.125em;
+            position: absolute;
+            background: #C4CBB7;
+            border-radius: 50%;
+            left: -1.438em;
+            top: 0px;
+            box-shadow: -1px 1px 1px 1px #AAB3AB;
+        }
+
+        .shameful:after {
+            content: " ";
+            width: 3.125em;
+            height: 3.125em;
+            position: absolute;
+            background: #C4CBB7;
+            border-radius: 50%;
+            bottom: 0px;
+            left: -1.438em;
+            box-shadow: -1px 1px 1px 1px #AAB3AB;
+        }
+
+        .civil {
+            border: 1px solid #AAB3AB;
+            border-radius: 2px;
+            box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.45);
+            clear: both;
+            padding: 1.563em 2.5em 1.875em;
+            width: 50%;
+            margin: -10% -1.875em 2.5em;
+            position: relative;
+            transition: 0.85s cubic-bezier(0.58, -0.57, 0.17, 1.21);
+        }
+
+        .civil:first-child {
+            margin-top: 0;
+        }
+
+        .civil:before {
+            content: " ";
+            position: absolute;
+            top: 0.688em;
+            left: -2.875em;
+            background: #EEE0B7;
+            height: 1.25em;
+            width: 1.25em;
+            border-radius: 50%;
+            border: 6px solid #C4CBB7;
+            box-shadow: inset 0 -1px 5px #99a14a;
+        }
+
+        .civil:after {
+            content: " ";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0.469em 0.938em 0.469em 0;
+            border-color: transparent #8F6951 transparent transparent;
+            position: absolute;
+            top: 1.25em;
+            left: -0.938em;
+        }
+
+        .civil.right {
+            float: right;
+        }
+
+        .civil.left {
+            float: left;
+        }
+
+        .civil.left:before {
+            left: auto;
+            right: -2.875em;
+        }
+
+        .civil.left:after {
+            left: auto;
+            right: -0.938em;
+            border-width: 0.469em 0 0.469em 0.938em;
+            border-color: transparent transparent transparent #8F6951;
+        }
+
+        .year {
+            position: absolute;
+            top: -4.375em;
+            width: 100%;
+        }
+
+        .civil.right .year {
+            text-align: left;
+            right: 0;
+        }
+
+        .civil.left .year {
+            text-align: right;
+            left: 0;
+        }
+
+        .year h4 {
+            letter-spacing: 0.125em;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            font-weight: 200;
+        }
+
+        .designation {
+            font-weight: 200;
+            line-height: 1;
+            font-size: 1.6rem;
+        }
+
+        .about {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        @media screen and (min-width: 75em) {
+            .civil {
+                margin-top: -80px;
+            }
+        }
+
+        @media screen and (max-width: 51.875em) {
+            .shameful {
+                left: 5%;
+            }
+
+            .civil {
+                margin: 1.563em 0 1.563em 1.875em;
+                width: 95%;
+                transition: 0.75s cubic-bezier(0.43, -0.57, 0.17, 1.11);
+            }
+
+            .civil.left,
+            .civil.right {
+                float: left;
+            }
+
+            .civil.left .year {
+                text-align: left;
+                left: 0;
+            }
+
+            .civil.left:before {
+                right: auto;
+                left: -2.938em;
+            }
+
+            .civil.left:after {
+                right: auto;
+                left: -0.938em;
+                border-width: 0.469em 0.938em 0.469em 0;
+                border-color: transparent #8F6951 transparent transparent;
+            }
+
+            .civil.right:before {
+                left: -2.938em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>Nothing Changes, If Nothing Changes</h1>
+        <div class="Americas">
+            <div class="shameful"></div>
+            <div class="acts">
+                <div class="civil right">
+                    <div class="year">
+                        <h4>1838</h4>
+                    </div>
+                    <h2 class="designation">The Trail Of Tears</h2>
+                    <p class="about">The relocation and movement of Native Americans, including many members of the
+                        Cherokee, Creek, Seminole, and Choctaw nations among others in the United States, from their
+                        homelands to Indian Territory (present day Oklahoma) in the Western United States became known
+                        as The Trail of Tears. The phrase originated from a description of the removal of the Choctaw
+                        Nation in 1831. Many Native Americans suffered from exposure, disease, and starvation while en
+                        route to their destinations, and many died, including 4,000 of the 15,000 relocated Cherokee. By
+                        1837, 46,000 Native Americans from these southeastern nations had been removed from their
+                        homelands thereby opening 25 million acres for settlement by European Americans.</p>
+                </div>
+                <div class="civil left">
+                    <div class="year">
+                        <h4>1857</h4>
+                    </div>
+                    <h2 class="designation">The Dread Scott Decision</h2>
+                    <p class="about">A decision by the United States Supreme Court that ruled that people of African
+                        descent imported into the United States and held as slaves, or their descendants—whether or not
+                        they were slaves—were not protected by the Constitution and could never be citizens of the
+                        United States. It also held that the United States Congress had no authority to prohibit slavery
+                        in federal territories. The Court also ruled that because slaves were not citizens, they could
+                        not sue in court. Lastly, the Court ruled that slaves—as chattel or private property—could not
+                        be taken away from their owners without due process.</p>
+                </div>
+                <div class="civil right">
+                    <div class="year">
+                        <h4>1861 - 1865</h4>
+                    </div>
+                    <h2 class="designation">From The Civil War To The KKK</h2>
+                    <p class="about">America’s bloodiest clash, the sectional conflct of the Civil War (1861-65) is the
+                        central event in America's historical consciousness. While the Revolution of 1776-1783 created
+                        the United States, the Civil War determined what kind of nation it would be. The war resolved
+                        two fundamental questions left unresolved by the revolution: whether the United States was to be
+                        a dissolvable confederation of sovereign states or an indivisible nation with a sovereign
+                        national government; and whether this nation, born of a declaration that all men were created
+                        with an equal right to liberty, would continue to exist as the largest slaveholding country in
+                        the world. Northern victory in the war preserved the United States as one nation and ended the
+                        institution of slavery that had divided the country from its beginning.</p>
+                    <p class="about">
+                        On December 24, 1865, Nathan Bedford Forrest, along with 5 Confederate veterans, founded the KKK
+                        “in order to protect white rights,” as its members claimed. They banded together to beat,
+                        torture and lynch black people for what was perceived as the slightest infraction of the law.
+                    </p>
+                </div>
+                <div class="civil left">
+                    <div class="year">
+                        <h4>1877</h4>
+                    </div>
+                    <h2 class="designation">Jim Crow</h2>
+                    <p class="about">Jim Crow was not a person, yet affected the lives of millions of people. Named
+                        after a popular 19th-century minstrel song that stereotyped African Americans, "Jim Crow" came
+                        to personify the system of government-sanctioned racial oppression and segregation in the United
+                        States between 1877 and the mid-1960s. Jim Crow was more than a series of rigid anti-black laws.
+                        It was a way of life. Under Jim Crow, African Americans were relegated to the status of second
+                        class citizens. Jim Crow represented the legitimization of anti-black racism.</p>
+                </div>
+                <div class="civil right">
+                    <div class="year">
+                        <h4>1942</h4>
+                    </div>
+                    <h2 class="designation">Internment Camps</h2>
+                    <p class="about">The US government came to the conclusion that interning Japanese-American citizens
+                        was the best of a number of bad options. Roughly a hundred thousand Japanese-Americans ended up
+                        in camps. U.S. President Franklin D. Roosevelt signs Executive Order 9066 on February 19,
+                        uprooting Japanese Americans on the west coast to be sent to Internment camps. The order led to
+                        the internment of Japanese Americans or AJAs (Americans of Japanese Ancestry) in which some
+                        120,000 ethnic Japanese people were held in internment camps for the duration of the war. Of the
+                        Japanese interned, 62% were Nisei (American-born, second-generation Japanese American and
+                        therefore American citizens) or Sansei (third-generation Japanese American, also American
+                        citizens) and the rest were Issei (Japanese immigrants and resident aliens, first-generation
+                        Japanese American).</p>
+                </div>
+                <div class="civil left">
+                    <div class="year">
+                        <h4>1965</h4>
+                    </div>
+                    <h2 class="designation">Murdered: Loving Thy Neighbor</h2>
+                    <p class="about"> On "Bloody Sunday," March 7, 1965, some 600 civil rights marchers headed east out
+                        of Selma on U.S. Route 80 on their way to Montgomery in effort to register African-American
+                        voters in Selma. They got only as far as the Edmund Pettus Bridge six blocks away, where state
+                        and local lawmen attacked them with billy clubs and tear gas and drove them back into Selma. On
+                        March 9, 1965, Martin Luther King Jr. had again attempted to march with more than 1,500 other
+                        civil rights advocates. King decided to return Selma, however, after encountering the state
+                        police along the way. That night in Selma, a white minister named James Reeb, whom had traveled
+                        to Alabama to join the march, was beaten to death by a group of segregationists.</p>
+                    <p class="about">Viola Gregg Liuzzo also traveled to Alabama to join and support the movement. On
+                        the night of her arrival, Liuzzo was driving another civil rights worker with the SCLC, an
+                        African-American teenager named Leroy Moton, back to Selma on Highway 80, when another car
+                        pulled alongside her vehicle. One of the passengers in the neighboring car shot at Liuzzo,
+                        striking her in the face and killing her. The car ended up in a ditch, and Moton survived the
+                        attack by pretending to be dead. Liuzzo was murdered by members of the Ku Klux Klan. She was the
+                        only known white female killed during the Civil Rights Movement.</p>
+                </div>
+                <div class="civil right">
+                    <div class="year">
+                        <h4>2016</h4>
+                    </div>
+                    <h2 class="designation">Fast Forward </h2>
+                    <p class="about">
+                        According to the Southern Poverty Law Center, there are about 784 known hate groups that are
+                        active and operating across the United States. Those groups include neo-Nazis, white extremists,
+                        neo-Confederates, racist skinheads and white nationalists and others. More than 250,000
+                        Americans over the age of 12 are victimized every year by hate crimes. According to a Bureau of
+                        Justice Statistics report about one in three hate crimes are ever reported to law enforcement
+                        officials.
+                    </p>
+                    <p class="about">
+                        The events that inspire racial discrimination and hatred in this country are widely rejected and
+                        railed against by many. Yet it would seem that those in the majority still hold onto the
+                        misconceptions and stereotypes the media portrays to condemn minorities of all backgrounds based
+                        on the actions of a few. African Americans are still viewed as dangerous despite facts and
+                        evidence to the contrary, Arab Americans are still seen as potential terrorists by many despite
+                        having been in America for half a century, Latino Americans will still have the misconception of
+                        illegal immigrants despite their history with America, and Asian Americans will still be Asian
+                        faces among the Americans, remaining the outsiders of the American equation. On the flip side,
+                        by many minorities, whites are presumed racist until proven otherwise. It’s time to acknowledge
+                        that racism is the biggest elephant in the room in American culture. The issue is so deeply
+                        ingrained in our society that we willingly and subconsciously draw lines on the ground between
+                        neighborhoods and place gates around our communities that separate those that are like us from
+                        those that are not.
+                    </p>
+                </div>
+            </div>
+    </section>
+</body>
+
+</html>

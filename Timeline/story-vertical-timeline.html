@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The story of a wonderful kid</title>
+    <style>
+        /* typography */
+        /* get your beautiful color names from: http://www.colors.commutercreative.com/grid/ */
+        /* media queries */
+        /* timeline layout */
+        html {
+            background-color: honeydew;
+            font-family: Arial, san-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: dimgrey;
+        }
+
+        .timeline {
+            position: relative;
+            margin-top: 55px;
+            margin-left: 15px;
+        }
+
+        .timeline:before {
+            /* vertical line*/
+            content: "";
+            position: absolute;
+            top: 10px;
+            /* to align with midline*/
+            left: 7px;
+            width: 2px;
+            height: 97%;
+            background-color: #cad2d6;
+        }
+
+        .timeline__block {
+            position: relative;
+            margin-top: 42px;
+            margin-bottom: 42px;
+            padding-left: 15px;
+        }
+
+        .timeline__block:last-child {
+            margin-bottom: 3em;
+        }
+
+        .timeline__block:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .timeline__midpoint {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: cadetblue;
+        }
+
+        .timeline__midpoint:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            width: 15px;
+            border-top: 1px solid #c5e1ec;
+        }
+
+        .timeline__content {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .timeline__content p+p {
+            padding-top: 0;
+        }
+
+        .timeline__content:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .timeline__midpoint--highlight>.timeline__year {
+            display: none;
+        }
+
+        /* timeline typography */
+        .timeline__content .timeline__year {
+            padding-top: 6px;
+            color: cadetblue;
+            text-align: left;
+        }
+
+        .timeline__midpoint--highlight .timeline__year {
+            color: #fff;
+            line-height: 4;
+        }
+
+        .timeline__year,
+        .timeline__midpoint--highlight+.timeline__content {
+            font-weight: 600;
+        }
+
+        .timeline__content>p {
+            font-size: 0.88em;
+        }
+
+        /* timeline layout for desktop */
+        @media (min-width: 1024px) {
+            section {
+                padding: 0 250px;
+            }
+
+            .timeline {
+                margin-left: 0;
+            }
+
+            .timeline:before {
+                /* vertical line */
+                left: 50%;
+                margin-left: -1px;
+            }
+
+            .timeline__midpoint {
+                left: 50%;
+                margin-left: -8px;
+            }
+
+            .timeline__midpoint:before {
+                width: 40px;
+            }
+
+            .timeline__midpoint:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 16px;
+                width: 40px;
+                border-top: 1px solid #c5e1ec;
+            }
+
+            .timeline__midpoint--highlight {
+                top: 0;
+                width: 76px;
+                height: 76px;
+                margin-left: -29px;
+                margin-left: -38px;
+                text-align: center;
+            }
+
+            .timeline__midpoint--highlight.no-top-margin {
+                margin-top: 0;
+            }
+
+            .timeline__midpoint--highlight .timeline__year {
+                display: block;
+            }
+
+            .timeline__midpoint--highlight:before,
+            .timeline__midpoint.timeline__midpoint--highlight:after {
+                content: none;
+            }
+
+            .timeline__midpoint--highlight,
+            .timeline__midpoint--highlight+.timeline__content {
+                margin-top: 2em;
+                margin-bottom: 2em;
+            }
+
+            .timeline__content {
+                width: 50%;
+            }
+
+            .timeline__content .timeline__year--mobile {
+                display: none;
+            }
+
+            .timeline__content--left {
+                margin-left: -6%;
+            }
+
+            .timeline__content--left .timeline__year {
+                left: 128%;
+            }
+
+            .timeline__year {
+                position: absolute;
+                width: 100%;
+                margin-top: 0;
+            }
+
+            .timeline__text--left {
+                padding-right: 25px;
+                text-align: right;
+            }
+
+            .timeline__content--right {
+                float: right;
+                width: 53%;
+                left: 11%;
+            }
+
+            .timeline__content--right .timeline__year {
+                right: 134%;
+                text-align: right;
+            }
+
+            .timeline__content--right .timeline__text--right {
+                margin-top: 0;
+            }
+
+            .timeline__img {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .timeline__content--left .timeline__img {
+                left: 127%;
+            }
+
+            .timeline__content--right .timeline__img {
+                right: 133.5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+
+        <h1 class="section-title">The story of a wonderful kid</h1>
+
+        <section class="timeline">
+
+            <div class="timeline__block">
+                <div class="timeline__midpoint"></div>
+                <div class="timeline__content timeline__content--left">
+                    <h3 class="timeline__year">1989</h3>
+                    <p class="timeline__text--left">
+                        The birth of a wonderful, fabulous, adorable and lovable baby.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__block">
+                <div class="timeline__midpoint"></div>
+                <div class="timeline__content timeline__content--right">
+                    <h3 class="timeline__year">1991</h3>
+                    <p class="timeline__text--right">
+                        Earliest memory of running to the door to welcome Daddy home.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__block">
+                <div class="timeline__midpoint"></div>
+                <div class="timeline__content timeline__content--left">
+                    <h3 class="timeline__year">1993</h3>
+                    <p class="timeline__text--left">
+                        Celebrated my birthday with my playmates in school. What a wonderful surprise to have the same
+                        birthday as my teacher!
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__block">
+                <div class="timeline__midpoint timeline__midpoint--highlight no-top-margin">
+                    <h3 class="timeline__year">1999</h3>
+                </div>
+                <div class="timeline__content timeline__content--right">
+                    <h3 class="timeline__year timeline__year--mobile">1999</h3>
+                    <p class="timeline__text--right">
+                        Naughty kid get to school early in order to play catching around school compound.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__block">
+                <div class="timeline__midpoint"></div>
+                <div class="timeline__content timeline__content--left">
+                    <h3 class="timeline__year">2003</h3>
+                    <p class="timeline__text--left">
+                        Our cross country team won the fifth place - just one point away from the fourth and getting
+                        that tiny momento trophy and life-long glory. &#9785;
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__block">
+                <div class="timeline__midpoint"></div>
+                <div class="timeline__content timeline__content--right">
+                    <h3 class="timeline__year">2008</h3>
+                    <p class="timeline__text--right">
+                        Bumpkin intern arrived in Disneyland.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__block">
+                <div class="timeline__midpoint timeline__midpoint--highlight no-top-margin">
+                    <h3 class="timeline__year">2009</h3>
+                </div>
+                <div class="timeline__content timeline__content--left">
+                    <h3 class="timeline__year timeline__year--mobile">2009</h3>
+                    <img class="timeline__img" src="" alt="">
+                    <p class="timeline__text--left">
+                        Thinking about the future.
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="timeline__block">
+                <div class="timeline__midpoint"></div>
+                <div class="timeline__content timeline__content--left">
+                    <h3 class="timeline__year">2012</h3>
+                    <p class="timeline__text--left">
+                        Proudly present - the graduand.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__block">
+                <div class="timeline__midpoint timeline__midpoint--highlight no-top-margin">
+                    <h3 class="timeline__year">2014</h3>
+                </div>
+                <div class="timeline__content timeline__content--right">
+                    <h3 class="timeline__year timeline__year--mobile">2014</h3>
+                    <p class="timeline__text--right">
+                        New direction.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__block">
+                <div class="timeline__midpoint"></div>
+                <div class="timeline__content timeline__content--left">
+                    <h3 class="timeline__year">2015</h3>
+                    <img class="timeline__img" src="" alt="">
+                    <p class="timeline__text--left">
+                        Grateful to the everyone and the universe.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline__block">
+                <div class="timeline__midpoint"></div>
+                <div class="timeline__content timeline__content--right">
+                    <h3 class="timeline__year">Going forward</h3>
+                    <p class="timeline__text--right">
+                        Creating...
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+    </section>
+</body>
+
+</html>

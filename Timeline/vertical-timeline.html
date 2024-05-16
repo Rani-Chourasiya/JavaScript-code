@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical timeline</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!--  -->
+    <style>
+        .timeline-container {
+            font-family: "Roboto", sans-serif;
+            width: 50%;
+            margin: auto;
+            display: block;
+            position: relative;
+        }
+
+        .timeline-container ul.tl {
+            margin: 20px 0;
+            padding: 0;
+            display: inline-block;
+
+        }
+
+        .timeline-container ul.tl li {
+            list-style: none;
+            margin: auto;
+            min-height: 50px;
+            border-left: 1px solid #86D6FF;
+            padding: 0 0 50px 30px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .timeline-container ul.tl li.dashed {
+            border-left: 1px dashed #86D6FF;
+        }
+
+        .timeline-container ul.tl li:last-child {
+            border-left: 0;
+        }
+
+        .timeline-container ul.tl li .item-icon {
+            position: absolute;
+            left: -15px;
+            top: -5px;
+            content: " ";
+            border: 8px solid rgba(255, 255, 255, 0.74);
+            border-radius: 500%;
+            background: #258CC7;
+            height: 30px;
+            width: 30px;
+        }
+
+        .timeline-container ul.tl li:hover::before {
+            border-color: #258CC7;
+            transition: all 1000ms ease-in-out;
+        }
+
+        ul.tl li .item-text {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        ul.tl li .item-title {}
+
+        ul.tl li .item-detail {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 12px;
+        }
+
+        ul.tl li .item-timestamp {
+            color: #8D8D8D;
+            font-size: 12px;
+            text-align: right;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="timeline-container">
+        <ul class="tl">
+            <li>
+                <div class="item-icon"></div>
+                <div class="item-text">
+                    <div class="item-title">Start from Shire</div>
+                    <div class="item-detail">Don't forget the ring</div>
+                </div>
+                <div class="item-timestamp">
+                    3rd March 2015<br> 19:00
+                </div>
+            </li>
+            <li class="tl-item">
+                <div class="item-icon"></div>
+                <div class="item-text">
+                    <div class="item-title">Kill some Orcs</div>
+                    <div class="item-detail">Don't enter the caves!!</div>
+                </div>
+                <div class="item-timestamp">
+                    15:00
+                </div>
+            </li>
+            <li class="tl-item  dashed">
+                <div class="item-icon"></div>
+                <div class="item-text">
+                    <div class="item-title">Throw that goddamn ring in the lava fdsa fdsa fdsa</div>
+                    <div class="item-detail">Also, throw that Gollum too</div>
+                </div>
+                <div class="item-timestamp">
+                    1st June 2015<br> 19:00
+                </div>
+            </li>
+            <li class="tl-item">
+                <div class="item-icon"></div>
+                <div class="item-text">
+                    <div class="item-title">Patient check</div>
+                    <div class="item-detail">A specialized doctor will have a look at your symptoms</div>
+                </div>
+
+            </li>
+
+        </ul>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</body>
+
+</html>

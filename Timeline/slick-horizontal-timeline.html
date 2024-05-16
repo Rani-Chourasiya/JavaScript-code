@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <title>Slick responsive horizontal timeline</title>
+    <style>
+        * {
+            outline: none;
+        }
+
+        .timeline-carousel {
+            margin: 0;
+            background-color: #323232;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            padding: 86px 6.9444% 90px 6.9444%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-carousel:after,
+        .timeline-carousel:before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            height: 100%;
+            width: 6.9444%;
+            background-color: #323232;
+            z-index: 3;
+            width: 6.9444%;
+        }
+
+        .timeline-carousel:after {
+            left: 0;
+        }
+
+        .timeline-carousel:before {
+            right: 0;
+            opacity: 0;
+        }
+
+        .timeline-carousel .slick-list {
+            overflow: visible;
+        }
+
+        .timeline-carousel .slick-dots {
+            bottom: -73px;
+        }
+
+        .timeline-carousel h1 {
+            color: white;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+        }
+
+        .timeline-carousel p {
+            color: white;
+            font-weight: 300;
+        }
+
+        .timeline-carousel__image {
+            padding-right: 30px;
+        }
+
+        .timeline-carousel__item {
+            cursor: pointer;
+        }
+
+        .timeline-carousel__item .media-wrapper {
+            opacity: 0.4;
+            padding-bottom: 71.4%;
+            -webkit-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+            -o-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+            transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        }
+
+        .timeline-carousel__item:last-child .timeline-carousel__item-inner:after {
+            width: calc(100% - 30px);
+        }
+
+        .timeline-carousel__item-inner {
+            position: relative;
+            padding-top: 45px;
+        }
+
+        .timeline-carousel__item-inner:after {
+            position: absolute;
+            width: 100%;
+            top: 45px;
+            left: 0;
+            content: "";
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .timeline-carousel__item-inner .year {
+            font-family: "Montserrat";
+            font-size: 36px;
+            line-height: 36px;
+            color: white;
+            display: table;
+            letter-spacing: -1px;
+            padding-right: 10px;
+            background-color: #323232;
+            z-index: 1;
+            position: relative;
+            margin: -15px 0 20px;
+            font-weight: 900;
+        }
+
+        .timeline-carousel__item-inner .year:after {
+            content: "";
+            position: absolute;
+            display: block;
+            left: -10px;
+            top: 0;
+            height: 100%;
+            width: 10px;
+            background-color: #323232;
+            z-index: 3;
+        }
+
+        .timeline-carousel__item-inner .month {
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #ffc107;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 900;
+        }
+
+        .timeline-carousel__item-inner p {
+            font-size: 12px;
+            line-height: 18px;
+            color: white;
+            width: 60%;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .timeline-carousel__item-inner .read-more {
+            font-size: 12px;
+            color: #ffc107;
+            display: table;
+            margin-bottom: 10px;
+            font-weight: 900;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .timeline-carousel__item-inner .read-more:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 0;
+            border-bottom: 2px solid #ffc107;
+            -webkit-transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+            -o-transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+            transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        }
+
+        .timeline-carousel__item-inner .read-more:hover:after {
+            width: 100%;
+        }
+
+        .timeline-carousel__item-inner .pointer {
+            height: 29px;
+            position: relative;
+            z-index: 1;
+            margin: -4px 0 16px;
+        }
+
+        .timeline-carousel__item-inner .pointer:after,
+        .timeline-carousel__item-inner .pointer:before {
+            position: absolute;
+            content: "";
+        }
+
+        .timeline-carousel__item-inner .pointer:after {
+            width: 9px;
+            height: 9px;
+            border-radius: 100%;
+            top: 0;
+            left: 0;
+            background-color: #ffc107;
+        }
+
+        .timeline-carousel__item-inner .pointer:before {
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 4px;
+            background-color: #ffc107;
+        }
+
+        .timeline-carousel .slick-active .media-wrapper {
+            opacity: 1 !important;
+        }
+
+        .slick-dots {
+            bottom: 160px;
+            list-style: none;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .slick-dots li {
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 6px;
+            position: relative;
+            width: 10px;
+            height: 10px;
+        }
+
+        .slick-dots li:last-child {
+            margin-right: 0;
+        }
+
+        .slick-dots li.slick-active button {
+            background: #ffc107;
+            border-color: #ffc107;
+        }
+
+        .slick-dots li button {
+            display: block;
+            font-size: 0;
+            width: 10px;
+            height: 10px;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            -webkit-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+            -o-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+            transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        }
+
+        .slick-dots li button:hover {
+            background: #ffc107;
+            border-color: #ffc107;
+        }
+
+        .link {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: 20px;
+            z-index: 9999;
+        }
+
+        .link a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .link .fa {
+            font-size: 28px;
+            margin-right: 8px;
+            color: #fff;
+        }
+
+        .slick-prev svg,
+        .slick-next svg {
+            height: auto;
+            width: 18px;
+            padding-bottom: 2px;
+        }
+
+        .slick-prev .btn,
+        .slick-next .btn {
+            border-radius: 0;
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .slick-prev,
+        .slick-next {
+            position: absolute;
+            top: 0;
+            z-index: 9999;
+            border-radius: 0;
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .slick-prev {
+            left: 0;
+        }
+
+        .slick-next {
+            right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="timeline-carousel">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 offset-3 text-center mb-5">
+                    <h1>Company History</h1>
+                    <p class="text-muted">Below is a concept of a horizontal timeline slider. You can drag the slides or
+                        click on the previous and next buttons.</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-carousel__item-wrapper" data-js="timeline-carousel">
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1956</span>
+                    <span class="month">Larry Lippert Founds B&L Industries</span>
+                    <p>On May 17, 1956, Lippert Components, Inc. (LCI®) was founded as B&L Industries. Together, Larry
+                        Lippert and Don Baldwin formed B&L Industries. Don and Larry began manufacturing galvanized
+                        mobile home roofing, creating a product called Duratop. Detroiter Mobile Homes and Redman
+                        Industries were B&L’s first customers. In 1957, Don sold his shares of B&L to Larry. The strong
+                        foundation laid by Larry led LCI to develop many innovative technologies and improve industry
+                        processes.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1960-1964</span>
+                    <span class="month">Planning for Future Expansion</span>
+                    <p>Towards the beginning on the decade, LCI struggled to pay bills and expansion projects were
+                        temporarily put on hold. In an effort to rebuild existing plants and to fund additional
+                        expansions, Larry entered into a deal with William “Bill” Redman. Bill’s son, Donald Redman,
+                        became managing partner of B&L Industries, alongside Larry, in exchange for cash to rebuild the
+                        plants and to fund additional expansion. Shortly thereafter, B&L Industries expanded into
+                        Pennsylvania, Kansas, Georgia and Michigan. B&L’s corporate office moved into a larger building
+                        in Alma, MI, the old Alma Products building. In 1964, Larry bought out Donald Redman and once
+                        again became sole shareholder of B&L Industries.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1966</span>
+                    <span class="month">Expansion Continues</span>
+                    <p>B&L Industries expands to Syracuse, Indiana.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1967</span>
+                    <span class="month">B&L of the Carolinas Founded</span>
+                    <p>B&L Industries of the Carolinas is founded.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1968</span>
+                    <span class="month">B&L of the Carolinas Founded</span>
+                    <p>B&L opens plants in Bonham, Texas and Bear Creek, Alabama. Larry’s son, Doug Lippert, becomes
+                        Plant Manager of B&L’s Syracuse, IN facility.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1969</span>
+                    <span class="month">B&L Industries Becomes Lippert Components, Inc.</span>
+                    <p>Larry worked to aggressively expand LCI in 1969, acquiring several manufacturing companies: D&H
+                        Tops, a manufacturer of Formica counter tops, Coachmen Draperies, Spreads by Cynthia, Comfo
+                        Sleep, maker of mattresses for housing, and C&B Manufacturing, which would eventually became LCI
+                        of Florida in Clearwater. These acquisitions would be crucial to attaining Skyline’s
+                        manufactured housing business decades later. The names of the aforementioned businesses would
+                        soon disappear, along with B&L Industries, to be replaced by Lippert Components, Inc. (LCI®).
+                    </p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1970</span>
+                    <span class="month">LCI Refocuses on the Steel Industry</span>
+                    <p>LCI begins selling its non-steel related businesses and closes both Comfo Sleep and Spreads by
+                        Cynthia in an effort to refocus on the steel industry.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1972</span>
+                    <span class="month">Joint Venture with Riblet Industries</span>
+                    <p>LCI continues to expand within Florida, opening an additional plant in Ocala. A joint venture is
+                        formed with Riblet Industries, combining forces in North Carolina and Kansas to maintain
+                        profitability for both companies within those states.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1974</span>
+                    <span class="month">Division of Assets</span>
+                    <p>Riblet Industries becomes a publicly-traded company, forcing LCI and Riblet to divide their
+                        assets between the two companies. With the flip of a coin, it was decided that Riblet would own
+                        and operate the facility in Burton, Kansas and LCI would own and operate the Henderson, North
+                        Carolina facility. This division would prove to be instrumental for LCI’s future growth: In many
+                        ways a sheer stroke of luck, North Carolina would soon after become a major hub for the
+                        manufactured housing industry. Clayton Homes and Oxford Homes became major players in the
+                        manufactured housing industry, boosting LCI’s sales to all-time highs. This began a kind of
+                        “golden age” in the manufactured housing industry. With the business now thriving, LCI further
+                        expanded into Kingston, Tennessee.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1976-1977</span>
+                    <span class="month">Doug Lippert Becomes CEO and President</span>
+                    <p>Doug Lippert becomes CEO and President of LCI. LCI opens a second division in Harrisburg, North
+                        Carolina and relocates the Bonham, TX plant to Alvarado, TX. In 1977, after Larry’s retirement
+                        from the business, LCI acquired Farmville Manufacturing, a maker of axle hubs in Cordele, GA.
+                        Additionally, LCI of Indiana relocates to Nappanee, IN.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1980-1983</span>
+                    <span class="month">Industry Slump Limits Business Growth</span>
+                    <p>The manufactured housing industry experienced meager productivity increases during the early
+                        1980’s, and as a result, LCI’s business slowed. An energy crisis and tight governmental monetary
+                        policy caused the manufactured housing industry to all but tumble. Through it all, LCI managed
+                        to stay afloat.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">1986</span>
+                    <span class="month">LCI Acquires Horton Homes, Sales Increase</span>
+                    <p>LCI expanded into Eatonton, Georgia and acquired the business of Horton Homes. Horton Homes
+                        became LCI’s largest customer at that time, taking sales from $30 to $40 million annually.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+           
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">2003</span>
+                    <span class="month">Jason Lippert Becomes CEO of LCI</span>
+                    <p>Doug Lippert stepped down as CEO of LCI and handed the torch to his son, Jason Lippert. Jason
+                        became LCI’s third generation of leadership.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">2003</span>
+                    <span class="month">Jason Lippert Becomes CEO of LCI</span>
+                    <p>Doug Lippert stepped down as CEO of LCI and handed the torch to his son, Jason Lippert. Jason
+                        became LCI’s third generation of leadership.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">2006</span>
+                    <span class="month">Happijac & SteelCo</span>
+                    <p>LCI acquired HappiJac, a manufacturer of numerous patented RV products such as bed lifts,
+                        slide-outs, camper jacks and tie down systems. LCI also acquired Steelco, a manufacturing
+                        company that held numerous slide-out patents.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="year">2007</span>
+                    <span class="month">Acquisition of Coach Step</span>
+                    <p>LCI began manufacturing Coach Step products, adding motorized entry steps to the list of
+                        capabilities.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <div class="pointer"></div>
+                    <span class="month">Acquisition of Trail Air</span>
+                    <p>Trailair, an industry leader in ride improvement components, was a major acquisition for LCI. The
+                        Trailair brand products include the Equa-Flex® rubberized equalizer, the Air Ride Pin Box and
+                        the Center Point Air Ride Suspension system.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+            <!--Timeline item-->
+            <div class="timeline-carousel__item">
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay">
+                    </div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <div class="pointer"></div>
+                    <span class="month">Acquisition of Extreme Engineering</span>
+                    <p>LCI acquired Extreme Engineering and began building specialty trailers for high-end watercraft,
+                        further expanding marine trailer capabilities.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            <!--/Timeline item-->
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $.js = function (el) {
+            return $('[data-js=' + el + ']')
+        };
+
+        function carousel() {
+            $.js('timeline-carousel').slick({
+                infinite: false,
+                arrows: true,
+                arrows: true,
+                prevArrow: '<div class="slick-prev"> <div class="btn mr-3 btn-warning d-flex justify-content-center align-items-center"> <div>Previous</div><svg class="ml-1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"> <path d="M10.1,19.1l1.5-1.5L7,13h14.1v-2H7l4.6-4.6l-1.5-1.5L3,12L10.1,19.1z"/> </svg></div></div>',
+                nextArrow: '<div class="slick-next"> <div class="btn btn-warning d-flex justify-content-center align-items-center"> <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M 14 4.9296875 L 12.5 6.4296875 L 17.070312 11 L 3 11 L 3 13 L 17.070312 13 L 12.5 17.570312 L 14 19.070312 L 21.070312 12 L 14 4.9296875 z"/> </svg> <div>Next</div></div></div>',
+                dots: true,
+                autoplay: false,
+                speed: 1100,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                responsive: [
+                    {
+                        breakpoint: 800,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }]
+            });
+        }
+
+        carousel();
+    </script>
+</body>
+
+</html>

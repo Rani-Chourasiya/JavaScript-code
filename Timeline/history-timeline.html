@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Brief History of Allan</title>
+    <style>
+        *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #2c3e50;
+}
+
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-header {
+  padding: 10px;
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 3.5em;
+  text-align: center;
+  color: #FFF;
+  text-shadow: 1px 1px 1px black;
+}
+
+.heading, .memory-date {
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 2em;
+  color: #000;
+}
+
+.text, .memory-text {
+  font-family: "Nunito", sans-serif;
+  font-size: 1em;
+  color: #000;
+}
+
+.placeholder {
+  background-color: #34495e;
+  height: 300px;
+  width: auto;
+}
+
+.memory-date {
+  text-align: center;
+}
+
+.memory-text {
+  margin: 10px 0px;
+  text-align: center;
+}
+
+.timeline {
+  margin: 50px 0px;
+}
+
+.memory {
+  list-style-type: none;
+  position: relative;
+  margin: 0 auto;
+  width: 6px;
+  padding-top: 50px;
+  background: #FFF;
+}
+
+.memory::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background: #FFF;
+  transition: background 0.5s ease-in-out;
+}
+
+.memory.in-view::after {
+  background: #52B3D9;
+}
+
+.memory-container {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #52B3D9;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.memory-container.in-view {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+.memory-container::before {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.memory:nth-child(odd) .memory-container {
+  left: 45px;
+  transform: translate3d(200px, 0, 0);
+}
+
+.memory:nth-child(odd) .memory-container.in-view {
+  transform: none;
+}
+
+.memory:nth-child(odd) .memory-container::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent #52B3D9 transparent transparent;
+}
+
+.memory:nth-child(even) .memory-container {
+  right: 470px;
+  transform: translate3d(-200px, 0, 0);
+}
+
+.memory:nth-child(even) .memory-container.in-view {
+  transform: none;
+}
+
+.memory:nth-child(even) .memory-container::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #52B3D9;
+}
+
+/* ---- TIMELINE RESPONSIVENESS --- */
+@media screen and (max-width: 900px) {
+  .memory-container {
+    width: 250px;
+  }
+
+  .memory:nth-child(even) .memory-container {
+    right: 320px;
+    /* 250 + 45 - 6*/
+  }
+}
+@media screen and (max-width: 600px) {
+  .memory {
+    margin-left: 20px;
+  }
+
+  .memory-container {
+    width: calc(100vw - 91px);
+  }
+
+  .memory:nth-child(even) .memory-container {
+    left: 45px;
+  }
+
+  .memory:nth-child(even) .memory-container::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #52B3D9 transparent transparent;
+  }
+}
+    </style>
+</head>
+<body>
+    
+<section class="placeholder">
+    <div class="page-header">A Brief History of Allan Pooley</div>
+  </section>
+  <section class="timeline">
+    <ul>
+      <li class="memory">
+        <div class="memory-container">
+          <p class="memory-date">1992: Let there be light!</p>
+          <p class="memory-text">Allan is born.</br></br>Having esteem and expectations for their new born son, his parents name him after an inanimate object, a rock.</p>
+        </div>
+      </li>
+      <div class="memory">
+        <div class="memory-container">
+          <div class="memory-date">2008: It Begins</div>
+          <div class="memory-text">As the great Edsgar Djkstra once said: </br></br><i><b>"It is practically impossible to teach good programming to students that have had a prior exposure to BASIC: as potential programmers they are mentally mutilated beyond hope of regeneration".</i></b></br></br>Thanks Djkstra!</br></br>Luckily for me, in a Year 10 computer studies class, learning BASIC is exactly where my education of Software Engineering began.</div>
+        </div>
+      </div>
+      <div class="memory">
+        <div class="memory-container">
+          <div class="memory-date">Late 2008: The BBC Basic Doctor</div>
+          <div class="memory-text">For my first piece of work I set out to build a Doctor.</br></br>Picture, if you would, hundreds upon hundreds of lines of IF, THEN, GOTO statements. A flowchart spanning over six A4 printed pages, enthusiastically sticky taped together.</br></br>The result was indeed a Doctor, but an erroneous one at that. When told by a user that they were experiencing nausea and fatigue, the BBC Basic Doctor would often proceed to congratulate them on conceiving a child.</div>
+        </div>
+      </div>
+      <div class="memory">
+        <div class="memory-container">
+          <div class="memory-date">2013: Attache</div>
+          <div class="memory-text">Reckon sheila blue mates flat out like a dole bludger roo bar pozzy. Thongs amber fluid kelpie rego dole bludger dunny rat pozzy offsider roadie bounce.</div>
+        </div>
+      </div>
+      <div class="memory">
+        <div class="memory-container">
+          <div class="memory-date">Late 2013: A Call to All Heroes</div>
+          <div class="memory-text">In one fateful semester in 2013, I studied Mobile Application Development and built my very first Android app. It was called 'A Call to All Heroes' and was physical fitness routine, veiled, adorned in a Fantasy fiction theme.</br></br>The idea was that, despite perhaps stereotype and widely held belief, fans of fantasy fiction and Roleplaying Games (RPGs) possessed the ideal attributes for pursuing physical development. They could consistently and repetitively follow routine, they were motivated through visible, tangible progress. It seemed that the world of physical fitness only needed to be translated to them in a common language</br></br>Enter <b>A Call to All Heroes!</b> Users would choose a class, which would provide them with a routine directed to certain physical attributes; They might choose a Barbarian to develop strength (anaerobic), or a Rogue to develop stamina (aerobic). Routines were presented and unlocked in zones to be travesed by the user. A new zone would yeild greater rewards, but more challenging routines. I wanted to account for users of all types - each zone would have routines for user's with access to a gym, a pair of dumbbells, or nothing but their bare hands!</br></br>The implementation is a definitely a little rough around the edges - that sure as hell ain't Google standard Android design practices. But the concept for the project is there, and shall be revisted in the future!</div>
+        </div>
+      </div>
+      <div class="memory">
+        <div class="memory-container">
+          <div class="memory-date">2014: IBM</div>
+          <div class="memory-text">Budgie smugglers postie yabber shazza got us some smokes lizard drinking jumbuck rort flamin rollie aussie salute. Buck's night g'day flake bull bar cubby house cockie icy pole dunny buck's night. Roo bar pav stonkered outback ankle biter brizzie what's crackin'.</div>
+        </div>
+      </div>
+      <div class="memory">
+        <div class="memory-container">
+          <div class="memory-date">2015: Internet of Pets</div>
+          <div class="memory-text">Ever wondered what happened what might happen if you give your students complete freedom to create an Internet of Things system over the course of a semester? In the case of my team, we stuck Bluetooth Low Energy (BLE) beacons to our pets and monitored their movement around the house.</br></br>Pets would move around our home fitted with small estimote beacons fitted to their collars, beacons which would be continously emitting a BLE signal. This signal would be picked up by RaspberryPi receivers strategically placed around our house. The receivers would forward any detected signals to a cloud-based server. Using an app on an Android device, the user could connect to this server and locate their pet based on where it was last detected</div>
+        </div>
+      </div>
+      <div class="memory">
+        <div class="memory-container">
+          <div class="memory-date">2015: Home Energy Management System</div>
+          <div class="memory-text">What a great beast you see before you in the image to the left. An intimidating, majestic mass of electronics. Aye, she's a beauty. The combined effort of roughly 15 ICT Engineering students in a single semester ICT Design, run by Zenon Chaczko.</br></br>But it's on the inside that counts right? It is very much the case for this system, this machine.It was coined the name of the 'Integrated Home Energy Management System' or IHEMS. It is a system that encompasses the combined programmatic interfacing of energy production (solar panels), energy storage (batteries) and home automation technologies.</br></br>My part in this project was taking care of the home automation side of the show. My team crafted our own Z-Wave  controller (Z-Wave being a home automation communications protocol). Our controller was a Raspberry Pi fitted with a Z-Wave communications module, called the "RaZberry". We would send RESTful commands to the the Pi, which would then relay them through the RaZberry. Our part of the system meant that we could remotely operate electrical appliances and monitor their energy consumption.</div>
+        </div>
+      </div>
+      <div class="memory">
+        <div class="memory-container">
+          <div class="memory-date">2015: Engineering Capstone</div>
+          <div class="memory-text">Over the course of 2015, my final year studying at UTS, I pursued an capstone project investigating whether video games might be an effective medium to communicate concepts surrounding human interaction and perceiving emotion.</br></br>Part of my project involved creating my own proof of concept, for which I chose to do by creating a <a href="https://en.wikipedia.org/wiki/Quest">quest</a> within the popular video game, The Elder Scrolls V: Skyrim.</br></br>The project proved to be an ambitious one, it was revealed that it would involve more than just computer science, but also needing a great deal of thought and effort within the realms of psychology and creative writing.</div>
+        </div>
+      </div>
+      <div class="memory">
+        <div class="memory-container">
+          <div class="memory-date">2016</div>
+          <div class="memory-text">Shazza got us some frog in a sock bradman throw-down he hasn't got a bonzer yabber barbie good onya billy offsider. Fremantle doctor flick sanger he's got a massive hottie fair dinkum pretty spiffy longneck.</br></br>Rort shonky stands out like a slab trackies. Skite coathanger rotten holden trackie dacks not my bowl of rice as cunning as a clacker dag fair dinkum op shop. Big smoke battler bizzo built like a cockie bush telly gobful.    </div>
+        </div>
+      </div>
+      <div class="memory">
+        <div class="memory-container">
+          <div class="memory-date">Early 2017: Blackmores Well Bot.</div>
+          <div class="memory-text">Shazza got us some frog in a sock bradman throw-down he hasn't got a bonzer yabber barbie good onya billy offsider. Fremantle doctor flick sanger he's got a massive hottie fair dinkum pretty spiffy longneck.</br></br>Rort shonky stands out like a slab trackies. Skite coathanger rotten holden trackie dacks not my bowl of rice as cunning as a clacker dag fair dinkum op shop. Big smoke battler bizzo built like a cockie bush telly gobful.</div>
+        </div>
+      </div>
+      <div class="memory">
+        <div class="memory-container">
+          <div class="memory-date">The Future, and beyond!</div>
+          <div class="memory-text">Shazza got us some frog in a sock bradman throw-down he hasn't got a bonzer yabber barbie good onya billy offsider. Fremantle doctor flick sanger he's got a massive hottie fair dinkum pretty spiffy longneck.</br></br>Rort shonky stands out like a slab trackies. Skite coathanger rotten holden trackie dacks not my bowl of rice as cunning as a clacker dag fair dinkum op shop. Big smoke battler bizzo built like a cockie bush telly gobful.</div>
+        </div>
+      </div>
+    </ul>
+  </section>
+  <section class="placeholder"></section>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+  <script>
+    var memories = document.querySelectorAll(".memory-container"); // All the memories that appear as we scroll down the timeline
+var circles = document.querySelectorAll(".memory"); // The greater memory element, but visually, simply the circle attached to the timeline.
+
+function elementInView(el) {
+  // The vertical distance between the top of the page and the top of the element.
+  var elementOffset = $(el).offset().top;
+  // The height of the element, including padding and borders.
+  var elementOuterHeight = $(el).outerHeight();
+  // Height of the window without margins, padding, borders.
+  var windowHeight = $(window).height();
+  // The vertical distance between the top of the page and the top of the viewport.
+  var scrollOffset = $(this).scrollTop();
+
+  if (elementOuterHeight < windowHeight) {
+    // Element is smaller than viewport.
+    if (scrollOffset > (elementOffset + elementOuterHeight - windowHeight)) {
+      // Element is completely inside viewport, reveal the element!
+      return true;
+    }
+  } else {
+    // Element is larger than the viewport, handle visibility differently.
+    // Consider it visible as soon as it's top half has filled the viewport.
+    if (scrollOffset > elementOffset) {
+      // The top of the viewport has touched the top of the element, reveal the element!
+      return true;
+    }
+  }
+  return false;
+}
+
+function handler() {
+  for (var i = 0; i < circles.length; i++) {
+    if (elementInView(circles[i])) {
+      memories[i].classList.add("in-view");
+      circles[i].classList.add("in-view");
+    }
+  }
+}
+
+$(window).on('DOMContentLoaded load resize scroll', handler);
+  </script>
+</body>
+</html>
